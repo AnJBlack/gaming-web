@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "sass": "^1.106.1"
+  },
+  "scripts": {
+    "build:css": "sass scss/main.scss styles/styles.css"
+  }
+}
