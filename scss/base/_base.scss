@@ -1,0 +1,117 @@
+
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+:root {
+  --color-primary: #{$color-primary};
+  --color-secondary: #{$color-secondary};
+  --color-accent: #{$color-accent};
+  --color-background: #{$color-background};
+  --color-surface: #{$color-surface};
+  --color-text: #{$color-text};
+  --color-muted: #{$color-muted};
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $color-background;
+  background: linear-gradient(
+    135deg,
+    $color-background 0%,
+    $color-gradient-middle 55%,
+    $color-secondary 100%
+  );
+  color: $color-text;
+  font-family: $font-body;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
+
+.site-main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "intro"
+    "featured";
+  gap: 24px;
+  width: min($container-width, 100%);
+  margin: 0 auto;
+  padding: 24px 20px;
+
+  .home-intro,
+  .about-intro,
+  .projects-intro,
+  .services-intro,
+  .contact-intro {
+    grid-area: intro;
+  }
+
+  .home-featured,
+  .about-featured,
+  .projects-featured,
+  .services-featured,
+  .contact-featured {
+    grid-area: featured;
+  }
+}
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 24px;
+  padding: 30px;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-section;
+}
+
+@include respond-to(small) {
+  .site-main {
+    width: 94%;
+    padding: 24px 0;
+  }
+
+  .content-section {
+    padding: 20px;
+  }
+}
+
+@include respond-to(desktop) {
+  .site-main {
+    &:has(.home-intro) {
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+      grid-template-areas: "intro featured";
+      align-items: start;
+    }
+
+    &:has(.about-intro),
+    &:has(.projects-intro),
+    &:has(.services-intro),
+    &:has(.contact-intro) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-areas: "intro featured";
+      align-items: start;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

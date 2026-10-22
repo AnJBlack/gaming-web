@@ -1,0 +1,17 @@
+
+@use "../utilities/variables" as *;
+
+.site-footer {
+  padding: 28px 6%;
+  background: $color-secondary;
+  border-top: 2px solid $color-primary;
+  text-align: center;
+
+  p {
+    margin: 8px 0;
+  }
+
+  a {
+    margin: 0 6px;
+  }
+}

@@ -1,0 +1,118 @@
+
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.content-article {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 20px;
+  border-left: 4px solid $color-primary;
+  background: $color-secondary;
+  border-radius: $border-radius-medium;
+  transition:
+    transform $transition-normal,
+    border-color $transition-normal,
+    box-shadow $transition-normal;
+
+  ul {
+    color: $color-muted;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: $color-accent;
+    box-shadow: 0 8px 20px rgb(0 0 0 / 25%);
+  }
+
+  &:focus-within {
+    border-color: $color-accent;
+    box-shadow: 0 0 0 2px rgb(34 211 238 / 25%);
+  }
+
+  &:active {
+    transform: scale(0.99);
+  }
+}
+
+.content-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin: 28px 0;
+  padding: 20px;
+
+  img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    border: 2px solid $color-primary;
+    border-radius: $border-radius-large;
+  }
+
+  figcaption {
+    margin-top: 0;
+    color: $color-muted;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+}
+
+.carousel {
+  overflow: hidden;
+  border-radius: $border-radius-large;
+  border: 1px solid $color-primary;
+  margin: 1.5rem 0;
+
+  .carousel-item img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+  }
+
+  .carousel-caption {
+    background: rgb(11 17 32 / 80%);
+    border-radius: $border-radius-medium;
+    padding: 0.75rem;
+
+    h5 {
+      color: $color-accent;
+      font-family: $font-heading;
+    }
+
+    p {
+      color: $color-text;
+    }
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    transition: background-color $transition-normal;
+
+    &:hover,
+    &:focus {
+      background: rgb(11 17 32 / 25%);
+    }
+  }
+
+  .carousel-indicators button {
+    transition:
+      opacity $transition-normal,
+      transform $transition-normal;
+
+    &.active {
+      transform: scale(0.9);
+    }
+  }
+}
+
+@include respond-to(carousel-small) {
+  .carousel {
+    .carousel-item img {
+      height: 220px;
+    }
+  }
+}

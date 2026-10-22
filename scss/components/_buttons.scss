@@ -1,0 +1,19 @@
+
+@use "../utilities/variables" as *;
+
+a,
+button,
+.btn {
+  transition:
+    color $transition-normal,
+    background-color $transition-normal,
+    border-color $transition-normal,
+    transform $transition-normal;
+}
+
+button,
+.btn {
+  &:active {
+    transform: scale(0.97);
+  }
+}

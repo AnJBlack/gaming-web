@@ -1,0 +1,72 @@
+
+@use "../utilities/variables" as *;
+
+.site-nav {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: $color-text;
+    font-weight: bold;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+}
+
+.gaming-navbar {
+  background: $color-secondary;
+  border-bottom: 2px solid $color-primary;
+
+  .navbar-brand {
+    color: $color-accent;
+    font-family: $font-heading;
+    font-weight: bold;
+    transition: color $transition-normal;
+
+    &:hover,
+    &:focus {
+      color: $color-text;
+    }
+  }
+
+  .nav-link {
+    color: $color-accent;
+    border-radius: $border-radius-small;
+    transition:
+      color $transition-normal,
+      background-color $transition-normal,
+      transform $transition-normal;
+
+    &:hover,
+    &:focus {
+      color: $color-text;
+      background-color: $color-surface;
+    }
+
+    &:active {
+      color: $color-accent;
+      transform: scale(0.96);
+    }
+
+    &.active {
+      color: $color-accent;
+    }
+  }
+
+  .navbar-toggler {
+    border-color: $color-accent;
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgb(34 211 238 / 35%);
+    }
+  }
+}
