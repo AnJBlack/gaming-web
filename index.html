@@ -8,37 +8,96 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abel&family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
 
-    <header class="site-header">
-        <p class="site-logo">Gaming Web</p>
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-dark gaming-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Gaming Web</a>
 
-        <nav class="site-nav">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="pages/sobre-mi.html">Sobre mi</a></li>
-                <li><a href="pages/proyectos.html">Proyectos</a></li>
-                <li><a href="pages/servicios.html">Servicios</a></li>
-                <li><a href="pages/contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#gamingNavbar"
+                aria-controls="gamingNavbar"
+                aria-expanded="false"
+                aria-label="Abrir o cerrar navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="gamingNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/sobre-mi.html">Sobre mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/proyectos.html">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
 
 <main class="site-main">
     <section class="content-section home-intro">
         <h1>Bienvenidos al mundo del gaming</h1>
         <p>Un espacio dedicado a los videojuegos y los esports.</p>
 
-        <figure class="content-figure">
-            <img
-                src="https://images.unsplash.com/photo-1542751371-adc38448a05e"
-                alt="Jugadores participando en un evento de esports">
-            <figcaption>
-                Los videojuegos como espacio de competencia y comunidad.
-            </figcaption>
-        </figure>
+        <div id="gamingCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#gamingCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Imagen 1"></button>
+        <button type="button" data-bs-target="#gamingCarousel" data-bs-slide-to="1" aria-label="Imagen 2"></button>
+        <button type="button" data-bs-target="#gamingCarousel" data-bs-slide-to="2" aria-label="Imagen 3"></button>
+    </div>
+
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e" class="d-block w-100" alt="Jugadores participando en un evento de esports">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Esports</h5>
+                <p>Competencia, estrategia y comunidad.</p>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575" class="d-block w-100" alt="Setup gamer con computadora y periféricos">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Setup gamer</h5>
+                <p>El espacio ideal para disfrutar cada partida.</p>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1603481546238-487240415921" class="d-block w-100" alt="Control de videojuegos para jugar">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Gaming</h5>
+                <p>Pasión por los videojuegos.</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#gamingCarousel" data-bs-slide="prev" aria-label="Imagen anterior">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#gamingCarousel" data-bs-slide="next" aria-label="Imagen siguiente">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+</div>
     </section>
 
     <section class="content-section home-featured">
@@ -58,6 +117,6 @@
              <a href="https://www.youtube.com/">YouTube</a>
             </p>
     </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

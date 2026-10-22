@@ -8,23 +8,49 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abel&family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
 
-    <header class="site-header">
-        <p class="site-logo">Gaming Web</p>
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-dark gaming-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Gaming Web</a>
 
-        <nav class="site-nav">
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="sobre-mi.html">Sobre mi</a></li>
-                <li><a href="proyectos.html">Proyectos</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#gamingNavbar"
+                aria-controls="gamingNavbar"
+                aria-expanded="false"
+                aria-label="Abrir o cerrar navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="gamingNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre-mi.html">Sobre mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="proyectos.html">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
 
     <main class="site-main">
         <section class="content-section projects-intro">
@@ -34,15 +60,47 @@
                 con los videojuegos y el desarrollo web.
             </p>
 
-            <figure class="content-figure">
-                <img
-                    src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8"
-                    alt="Pantalla con contenido relacionado con videojuegos"
-                    width="600">
-                <figcaption>
-                    Ideas para proyectos dentro del mundo gamer.
-                </figcaption>
-            </figure>
+            <div id="projectsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Proyecto 1"></button>
+                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="1" aria-label="Proyecto 2"></button>
+                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="2" aria-label="Proyecto 3"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8" class="d-block w-100" alt="Pantalla con contenido relacionado con videojuegos">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Ideas gamer</h5>
+                            <p>Propuestas creativas relacionadas con videojuegos.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e" class="d-block w-100" alt="Jugadores participando en un evento de esports">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Guía de Counter-Strike 2</h5>
+                            <p>Estrategia, mapas y trabajo en equipo.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575" class="d-block w-100" alt="Computadora y periféricos de un setup gamer">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Desarrollo web</h5>
+                            <p>Diseño y creación de páginas web.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev" aria-label="Proyecto anterior">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next" aria-label="Proyecto siguiente">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
         </section>
 
         <section class="content-section projects-featured">
@@ -73,6 +131,6 @@
              <a href="https://www.youtube.com/">YouTube</a>
             </p>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
