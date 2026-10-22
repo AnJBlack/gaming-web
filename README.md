@@ -23,4 +23,4 @@ Este proyecto fue desarrollado como parte de la formación en Desarrollo Web. In
 
 ## Sitio publicado
 
-Próximamente se agregará aquí el enlace al sitio desplegado con GitHub Pages.
+[Visitar Gaming Web](https://anjblack.github.io/gaming-web/)
