@@ -8,9 +8,23 @@
     @media (max-width: 576px) {
       @content;
     }
+  } @else if $breakpoint == tablet {
+    @media (min-width: 768px) {
+      @content;
+    }
   } @else if $breakpoint == desktop {
     @media (min-width: 1024px) {
       @content;
     }
+  }
+}
+
+// Mixin con parámetros para animar elementos al interactuar.
+@mixin interactive-effect($distance: -4px, $duration: 0.3s, $scale: 1.02) {
+  transition: transform $duration ease, box-shadow $duration ease;
+
+  &:hover {
+    transform: translateY($distance) scale($scale);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
   }
 }

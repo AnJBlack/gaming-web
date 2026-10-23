@@ -11,6 +11,10 @@
   border-left: 4px solid $color-primary;
   background: $color-secondary;
   border-radius: $border-radius-medium;
+
+  // Mixin parametrizado para la animación interactiva.
+  @include interactive-effect(-4px, 0.3s, 1.01);
+
   transition:
     transform $transition-normal,
     border-color $transition-normal,
@@ -21,9 +25,7 @@
   }
 
   &:hover {
-    transform: translateY(-4px);
     border-color: $color-accent;
-    box-shadow: 0 8px 20px rgb(0 0 0 / 25%);
   }
 
   &:focus-within {
@@ -51,6 +53,12 @@
     height: auto;
     border: 2px solid $color-primary;
     border-radius: $border-radius-large;
+    transition: transform $transition-normal, box-shadow $transition-normal;
+
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 24px rgb(0 0 0 / 25%);
+    }
   }
 
   figcaption {

@@ -43,7 +43,8 @@ body {
     "intro"
     "featured";
   gap: 24px;
-  width: min($container-width, 100%);
+  width: 100%;
+  max-width: $container-width;
   margin: 0 auto;
   padding: 24px 20px;
 
@@ -83,6 +84,17 @@ body {
 
   .content-section {
     padding: 20px;
+  }
+}
+
+@include respond-to(tablet) {
+  .site-main {
+    gap: 28px;
+    padding: 32px 24px;
+  }
+
+  .content-section {
+    padding: 28px;
   }
 }
 

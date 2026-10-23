@@ -25,8 +25,15 @@
 .gaming-navbar {
   background: $color-secondary;
   border-bottom: 2px solid $color-primary;
+  
+   .container,
+  .container-fluid {
+    min-width: 0;
+  }
 
   .navbar-brand {
+    max-width: 75%;
+    overflow-wrap: anywhere;
     color: $color-accent;
     font-family: $font-heading;
     font-weight: bold;

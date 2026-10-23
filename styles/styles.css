@@ -32,7 +32,8 @@ body {
   grid-template-columns: 1fr;
   grid-template-areas: "intro" "featured";
   gap: 24px;
-  width: min(1100px, 100%);
+  width: 100%;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 24px 20px;
 }
@@ -71,6 +72,15 @@ body {
     padding: 20px;
   }
 }
+@media (min-width: 768px) {
+  .site-main {
+    gap: 28px;
+    padding: 32px 24px;
+  }
+  .content-section {
+    padding: 28px;
+  }
+}
 @media (min-width: 1024px) {
   .site-main:has(.home-intro) {
     grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
@@ -102,9 +112,10 @@ h3 {
 }
 
 h1 {
-  font-size: 2.8rem;
+  font-size: clamp(2rem, 5vw, 2.8rem);
   font-weight: 700;
   color: #22D3EE;
+  overflow-wrap: anywhere;
 }
 
 h2 {
@@ -138,12 +149,12 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
-@media (max-width: 600px) {
+@media (min-width: 768px) {
   h1 {
-    font-size: 2rem;
+    font-size: clamp(2.3rem, 4vw, 2.8rem);
   }
   h2 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 }
 .site-header {
@@ -185,7 +196,13 @@ button:focus-visible {
   background: #111827;
   border-bottom: 2px solid #8B5CF6;
 }
+.gaming-navbar .container,
+.gaming-navbar .container-fluid {
+  min-width: 0;
+}
 .gaming-navbar .navbar-brand {
+  max-width: 75%;
+  overflow-wrap: anywhere;
   color: #22D3EE;
   font-family: "Orbitron", sans-serif;
   font-weight: bold;
@@ -239,15 +256,20 @@ button:focus-visible {
   border-left: 4px solid #8B5CF6;
   background: #111827;
   border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.content-article:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+.content-article {
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .content-article ul {
   color: #B8C2D6;
 }
 .content-article:hover {
-  transform: translateY(-4px);
   border-color: #22D3EE;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 .content-article:focus-within {
   border-color: #22D3EE;
@@ -272,6 +294,11 @@ button:focus-visible {
   height: auto;
   border: 2px solid #8B5CF6;
   border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.content-figure img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 .content-figure figcaption {
   margin-top: 0;
@@ -324,9 +351,8 @@ button:focus-visible {
     height: 220px;
   }
 }
-a,
 button,
-.btn {
+.btn, a {
   transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 

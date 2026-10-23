@@ -1,9 +1,8 @@
 
 @use "../utilities/variables" as *;
 
-a,
-button,
-.btn {
+// Estilo base compartido mediante @extend.
+%interactive-control {
   transition:
     color $transition-normal,
     background-color $transition-normal,
@@ -11,8 +10,14 @@ button,
     transform $transition-normal;
 }
 
+a {
+  @extend %interactive-control;
+}
+
 button,
 .btn {
+  @extend %interactive-control;
+
   &:active {
     transform: scale(0.97);
   }
